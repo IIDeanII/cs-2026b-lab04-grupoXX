@@ -37,4 +37,4 @@
 
 ## Conclusión
 
-Se elige el **Monolito Modular** con un puntaje de **4.15**, ya que ofrece el balance perfecto entre alta modificabilidad para agregar distritos/puntos sin romper otros módulos, y la simplicidad operacional requerida para un desarrollador individual en un plazo de 1 mes[cite: 3, 6, 10, 14]. Para más detalles, ver el [ADR-001](adr/001-estilo-arquitectonico.md)[cite: 10, 12].
+Se elige el **Monolito Modular** con un puntaje de **4.15**, ya que ofrece el balance perfecto entre alta modificabilidad para agregar distritos/puntos sin romper otros módulos, y la simplicidad operacional requerida para un desarrollador individual en un plazo de 1 mes. Para más detalles, ver el [ADR-001](adr/001-estilo-arquitectonico.md).
