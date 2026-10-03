@@ -2,9 +2,9 @@
 
 ## Alternativas consideradas
 
-**A. Monolito en capas:** Sistema tradicional dividido en presentación, lógica de negocio y acceso a datos[cite: 3]. Un solo despliegue[cite: 3].
-**B. Microservicios:** Servicios independientes para Usuarios, Solicitudes, Puntos y Reportes con sus propias bases de datos y API Gateway[cite: 3, 8].
-**C. Monolito modular (Elegido):** Un solo despliegue dividido en módulos de dominio desacoplados con interfaces públicas explícitas[cite: 3, 10].
+- **A. Monolito en capas:** Sistema tradicional dividido en presentación, lógica de negocio y acceso a datos[cite: 3]. Un solo despliegue[cite: 3]. 
+- **B. Microservicios:** Servicios independientes para Usuarios, Solicitudes, Puntos y Reportes con sus propias bases de datos y API Gateway[cite: 3, 8].
+- **C. Monolito modular (Elegido):** Un solo despliegue dividido en módulos de dominio desacoplados con interfaces públicas explícitas[cite: 3, 10].
 
 ---
 
