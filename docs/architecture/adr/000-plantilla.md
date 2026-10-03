@@ -8,7 +8,7 @@
 1. <Alternativa A>
 2. <Alternativa B>
 ## Decisión
-<Qué se decidió, en voz activa: "Usaremos...".>
+<Qué se decidió, en voz activa: "Usaremos....".>
 ## Consecuencias
 - Positivas: <...>
 - Negativas / riesgos: <...>
