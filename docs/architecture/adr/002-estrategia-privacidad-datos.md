@@ -10,10 +10,10 @@ En el Perú rige la **Ley N° 29733 (Ley de Protección de Datos Personales)**, 
 
 ## Decisión
 Aceptamos implementar los siguientes mecanismos dentro de la arquitectura:
-1. **Cifrado en tránsito y reposo:** Comunicaciones protegidas estrictamente mediante HTTPS (TLS 1.3) vía Nginx y contraseñas/tokens hasheados con algoritmos robustos (Argon2 / bcrypt).
+1. **Cifrado en tránsito y reposo:** Comunicaciones protegidas estrictamente mediante HTTPS (TLS 1.3) via Nginx y contraseñas/tokens hasheados con algoritmos robustos (Argon2 / bcrypt).
 2. **Aislamiento de la ubicación:** Las direcciones y ubicaciones GPS de los vecinos solo serán visibles para el reciclador cuando la solicitud de recojo esté asignada y activa en su ruta del día.
 3. **Consentimiento explícito:** Registro formal del consentimiento en la PWA durante el registro de usuarios.
-4. **Módulo de borrado/anonimización:** Mecanismo en el módulo de Usuarios para anonimizar los datos históricos de un vecino cuando ejerza su derecho de cancelación.
+4. **Módulo de borrado/anonimización:** Mecanismo en el modulo de Usuarios para anonimizar los datos históricos de un vecino cuando ejerza su derecho de cancelación.
 
 ## Consecuencias
 
