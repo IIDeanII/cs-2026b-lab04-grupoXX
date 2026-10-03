@@ -3,7 +3,7 @@
 ## 1. Requisitos funcionales clave
 
 | ID    | Requisito                                                                                                                          | Actor         | Prioridad |
-|-------|------------------------------------------------------------------------------------------------------------------------------------|---------------|-----------|
+|-------|----------------------------------------------------------------------------------------------------------------------|---------------|-----------|
 | RF-01 | Solicitar recojo de residuos reciclables indicando tipo de material, ubicación y horario.                                          | Vecino        | Alta      |
 | RF-02 | Visualizar la ruta de recojo asignada para el día y actualizar el estado de las solicitudes.                                       | Reciclador    | Alta      |
 | RF-03 | Consultar y canjear puntos acumulados por kilogramo de material reciclado entregado.                                               | Vecino        | Alta      |
