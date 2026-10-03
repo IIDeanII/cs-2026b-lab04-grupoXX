@@ -1,1 +1,44 @@
+@startuml
 
+
+title Alternativa Descartada: Arquitectura de Microservicios (EcoRecicla AQP)
+
+package "Clientes" {
+  [App Movil Vecinos / Recicladores] as App
+  [Portal Web Municipal] as Web
+}
+
+package "Infraestructura de Microservicios" {
+  [API Gateway] as Gateway
+  [Servicio Autenticacion] as AuthSvc
+  [Servicio Solicitudes y Rutas] as SolSvc
+  [Servicio Puntos y Canjes] as PtsSvc
+  [Servicio Reportes] as RepSvc
+  
+  database "DB Usuarios" as DB1
+  database "DB Solicitudes" as DB2
+  database "DB Puntos" as DB3
+  database "DB Reportes" as DB4
+}
+
+App --> Gateway : REST API
+Web --> Gateway : REST API
+
+Gateway --> AuthSvc
+Gateway --> SolSvc
+Gateway --> PtsSvc
+Gateway --> RepSvc
+
+AuthSvc --> DB1
+SolSvc --> DB2
+PtsSvc --> DB3
+RepSvc --> DB4
+
+note bottom
+  <b>MOTIVO DE RECHAZO DE MICROSERVICIOS:</b>
+  1. Alta complejidad operativa (4 bases de datos independientes y monitoreo distribuido).
+  2. Inviable para 1 solo desarrollador en 1 mes (Restricciones R-01 y R-02).
+  3. Costo elevado de hosting (requiere cluster Kubernetes/múltiples servidores, violando R-03).
+end note
+
+@enduml
