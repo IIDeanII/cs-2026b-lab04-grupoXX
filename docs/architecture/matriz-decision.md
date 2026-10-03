@@ -2,9 +2,9 @@
 
 ## Alternativas consideradas
 
-- **A. Monolito en capas:** Sistema tradicional dividido en presentación, lógica de negocio y acceso a datos[cite: 3]. Un solo despliegue[cite: 3]. 
-- **B. Microservicios:** Servicios independientes para Usuarios, Solicitudes, Puntos y Reportes con sus propias bases de datos y API Gateway[cite: 3, 8].
-- **C. Monolito modular (Elegido):** Un solo despliegue dividido en módulos de dominio desacoplados con interfaces públicas explícitas[cite: 3, 10].
+- **A. Monolito en capas:** Sistema tradicional dividido en presentación, lógica de negocio y acceso a datos. Un solo despliegue. 
+- **B. Microservicios:** Servicios independientes para Usuarios, Solicitudes, Puntos y Reportes con sus propias bases de datos y API Gateway.
+- **C. Monolito modular (Elegido):** Un solo despliegue dividido en módulos de dominio desacoplados con interfaces públicas explícitas.
 
 ---
 
@@ -12,11 +12,11 @@
 
 | Criterio | Peso | Justificación (Driver relacionado) |
 |---|---|---|
-| Modificabilidad | 30% | Atributo crítico (QA-01): agregar distritos o reglas de puntos en ≤ 2 días-persona[cite: 14]. |
-| Tiempo de entrega | 25% | Restricción R-01: el MVP debe estar en producción en 1 mes por 1 solo desarrollador[cite: 14]. |
-| Simplicidad operativa | 20% | Restricción R-02 y R-03: desarrollo individual y despliegue en VPS de bajo costo[cite: 6, 14]. |
-| Costo de hosting | 15% | Restricción R-03: presupuesto reducido[cite: 6, 14]. |
-| Escalabilidad | 10% | Carga moderada y predecible en distritos iniciales de Arequipa[cite: 6, 14]. |
+| Modificabilidad | 30% | Atributo crítico (QA-01): agregar distritos o reglas de puntos en ≤ 2 días-persona. |
+| Tiempo de entrega | 25% | Restricción R-01: el MVP debe estar en producción en 1 mes por 1 solo desarrollador. |
+| Simplicidad operativa | 20% | Restricción R-02 y R-03: desarrollo individual y despliegue en VPS de bajo costo. |
+| Costo de hosting | 15% | Restricción R-03: presupuesto reducido. |
+| Escalabilidad | 10% | Carga moderada y predecible en distritos iniciales de Arequipa. |
 
 ---
 
