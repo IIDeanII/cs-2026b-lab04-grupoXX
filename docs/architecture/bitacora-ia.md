@@ -2,11 +2,11 @@
 
 | # | Fecha | Herramienta | Prompt (resumen) | Qué propuso la IA | Qué verificamos o corregimos | Decisión |
 |---|---|---|---|---|---|---|
-| 1 | 2026-10-02 | Gemini / ChatGPT | Prompt 1: Proponer 3 alternativas arquitectónicas para EcoRecicla AQP. | Recomendó Microservicios con Kubernetes y Event Bus por "alta escalabilidad". | Se rechazó: excede la capacidad de 1 solo desarrollador (R-02) y las restricciones de 1 mes (R-01) y VPS de bajo costo (R-03). | Rechazada |
-| 2 | 2026-10-02 | Gemini / ChatGPT | Prompt 2: Crítica adversarial contra el Monolito Modular. | Advirtió riesgo de acoplamiento si no se respetan los límites de dominio entre módulos. | Se aceptó la observación: se aplicará encapsulamiento estricto por carpetas de dominio e interfaces públicas explícitas. | Aceptada |
-| 3 | 2026-10-02 | Gemini / ChatGPT | Prompt 3: Generar escenarios de calidad en formato 6 partes. | Generó métricas vagas como "el sistema responderá rápido y cambiará fácil". | Se corrigió: se asignaron métricas numéricas concretas (p95 ≤ 2s, modificabilidad ≤ 2 días-persona). | Corregida |
-| 4 | 2026-10-02 | Gemini / ChatGPT | Prompt 4: Proponer motor de base de datos. | Sugirió MongoDB por flexibilidad en los esquemas de recolección. | Se rechazó: las relaciones entre usuarios, puntos, distritos y rutas requieren integridad referencial estricta (PostgreSQL / MySQL). | Rechazada |
-| 5 | 2026-10-02 | Gemini / ChatGPT | Prompt 5: Diagramación en Mermaid y PlantUML. | Generó sintaxis básica de diagramas de bloques. | Se corrigió: se ajustó la sintaxis para reflejar correctamente los límites del Monolito Modular y la notación de contenedores C4. | Corregida |
+| 1 | 2026-10-02 | Gemini | Prompt 1: Proponer 3 alternativas arquitectónicas para EcoRecicla AQP. | Recomendó Microservicios con Kubernetes y Event Bus por "alta escalabilidad". | Se rechazó: excede la capacidad de 1 solo desarrollador (R-02) y las restricciones de 1 mes (R-01) y VPS de bajo costo (R-03). | Rechazada |
+| 2 | 2026-10-02 | Gemini | Prompt 2: Crítica adversarial contra el Monolito Modular. | Advirtió riesgo de acoplamiento si no se respetan los límites de dominio entre módulos. | Se aceptó la observación: se aplicará encapsulamiento estricto por carpetas de dominio e interfaces públicas explícitas. | Aceptada |
+| 3 | 2026-10-02 | Gemini | Prompt 3: Generar escenarios de calidad en formato 6 partes. | Generó métricas vagas como "el sistema responderá rápido y cambiará fácil". | Se corrigió: se asignaron métricas numéricas concretas (p95 ≤ 2s, modificabilidad ≤ 2 días-persona). | Corregida |
+| 4 | 2026-10-02 | Gemini | Prompt 4: Proponer motor de base de datos. | Sugirió MongoDB por flexibilidad en los esquemas de recolección. | Se rechazó: las relaciones entre usuarios, puntos, distritos y rutas requieren integridad referencial estricta (PostgreSQL / MySQL). | Rechazada |
+| 5 | 2026-10-02 | Gemini | Prompt 5: Diagramación en Mermaid y PlantUML. | Generó sintaxis básica de diagramas de bloques. | Se corrigió: se ajustó la sintaxis para reflejar correctamente los límites del Monolito Modular y la notación de contenedores C4. | Corregida |
 
 ---
 
