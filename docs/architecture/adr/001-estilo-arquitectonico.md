@@ -22,8 +22,8 @@ El backend se desplegará como un único artefacto ejecutable en el VPS, pero el
 ## Consecuencias
 
 ### Positivas
-- **Simplicidad de despliegue:** Un único proceso en un solo VPS, manteniendo bajos los costos de hosting y eliminando la complejidad de redes de microservicios.
-- **Alta modificabilidad:** Los módulos tienen límites explícitos, permitiendo agregar distritos o modificar el esquema de puntos aisladamente.
+- **Simplicidad de despliegue:** Un unico proceso en un solo VPS, manteniendo bajos los costos de hosting y eliminando la complejidad de redes de microservicios.
+- **Alta modificabilidad:** Los modulos tienen límites explícitos, permitiendo agregar distritos o modificar el esquema de puntos aisladamente.
 - **Velocidad de desarrollo:** Ideal para ser construido por 1 desarrollador en el plazo de 1 mes.
 
 ### Negativas / Riesgos
