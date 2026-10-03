@@ -13,16 +13,16 @@
 ## Anexo: Prompts completos utilizados
 
 ### Prompt 1 (Generación de alternativas)
-> Dame 3 opciones de arquitectura de software para un sistema llamado EcoRecicla AQP en Arequipa. Trata sobre vecinos que piden recojo de reciclaje, recicladores que ven sus rutas y ganan puntos, y la municipalidad que ve reportes. Ojo: soy un solo desarrollador, tengo 1 mes para el MVP y un servidor VPS barato. Prioriza la modificabilidad para agregar distritos fácil.
+> Dame 3 opciones de arquitectura de software para un sistema llamado EcoRecicla AQP en Arequipa. Trata sobre vecinos que piden recojo de reciclaje, recicladores que ven sus rutas y ganan puntos, y la municipalidad que ve reportes. Ojo: soy un solo desarrollador, tengo 1 mes para el MVP y un servidor VPS barato. Prioriza la modificabilidad para agregar distritos facil.
 
 ### Prompt 2 (Crítica adversarial)
 > Dame todas las desventajas, riesgos y cosas malas de usar un Monolito Modular para este proyecto de reciclaje. Actúa como un revisor bien estricto y dime en qué puede fallar la arquitectura a futuro si la elijo.
 
 ### Prompt 3 (Escenarios de calidad)
-> Ayúdame a armar un escenario de calidad para el atributo de modificabilidad en EcoRecicla AQP usando las 6 partes (fuente, estímulo, entorno, artefacto, respuesta y medida). La medida tiene que ser un número concreto en días-persona.
+> Ayudame a armar un escenario de calidad para el atributo de modificabilidad en EcoRecicla AQP usando las 6 partes (fuente, estímulo, entorno, artefacto, respuesta y medida). La medida tiene que ser un número concreto en días-persona.
 
 ### Prompt 4 (Selección de Base de Datos)
-> ¿Qué base de datos me conviene más para EcoRecicla AQP entre MongoDB y PostgreSQL? Considera que el sistema es un monolito modular con usuarios, puntos de canje, rutas y distritos.
+> ¿Que base de datos me conviene más para EcoRecicla AQP entre MongoDB y PostgreSQL? Considera que el sistema es un monolito modular con usuarios, puntos de canje, rutas y distritos.
 
 ### Prompt 5 (Diagram as Code)
-> Genera el código en Mermaid para representar un Monolito Modular con los módulos de Usuarios, Solicitudes/Rutas, Puntos/Canjes y Reportes Municipales.
+> Genera el codigo en Mermaid para representar un Monolito Modular con los módulos de Usuarios, Solicitudes/Rutas, Puntos/Canjes y Reportes Municipales.
