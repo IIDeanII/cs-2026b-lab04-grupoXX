@@ -37,5 +37,5 @@ graph TD
 - [ADR-002: Estrategia de privacidad de datos y cumplimiento de la Ley N° 29733](docs/architecture/adr/002-estrategia-privacidad-datos.md)
 - [ADR-003: Selección del motor de base de datos relacional (PostgreSQL)](docs/architecture/adr/003-seleccion-motor-bd.md)
 
-## Reflexión sobre el uso de la IA (5-8 líneas)
+## Reflexión sobre el uso de la IA
 La inteligencia artificial actuo como un copiloto eficaz para acelerar la estructuración de la documentación técnica y generar la sintaxis inicial de los diagramas (Mermaid, PlantUML y Python Diagrams). Sin embargo, presento limitaciones al cortar bloques de codigo extensos, omitir directivas de posicionamiento visual y sugerir sintaxis obsoleta que impedía el correcto renderizado. Aprendi que la IA no reemplaza el criterio del arquitecto: fue indispensable validar paso a paso la consistencia de cada entregable, verificar de forma independiente la sintaxis en renderizadores oficiales e iterar los prompts para adaptar las respuestas estrictamente a las restricciones del caso de estudio.
