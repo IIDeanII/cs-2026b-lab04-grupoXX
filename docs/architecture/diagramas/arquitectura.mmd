@@ -1,1 +1,64 @@
+graph TD
+    %% Definición de Estilos
+    classDef actor fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef client fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
+    classDef module fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
+    classDef db fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
 
+    %% Actores
+    subgraph Actores["Actores del Sistema"]
+        V["Vecino de Arequipa"]:::actor
+        R["Reciclador Formalizado"]:::actor
+        M["Administrador Municipal"]:::actor
+    end
+
+    %% Clientes / Interfaces
+    subgraph Clientes["Capa de Presentación"]
+        PWA["PWA / App Móvil (React/Vue)"]:::client
+        WEB["Portal Web Municipal"]:::client
+    end
+
+    %% Monolito Modular Backend
+    subgraph Backend["Monolito Modular Backend (API REST)"]
+        subgraph ModuloAuth["Módulo 1: Usuarios y Autenticación"]
+            AUTH["Gestión de Usuarios, Roles y Sesiones"]:::module
+        end
+
+        subgraph ModuloSolicitudes["Módulo 2: Solicitudes y Rutas"]
+            SOL["Gestión de Solicitudes y Asignación de Rutas"]:::module
+        end
+
+        subgraph ModuloPuntos["Módulo 3: Puntos y Canjes"]
+            PTS["Cálculo de Puntos y Catálogo de Premios"]:::module
+        end
+
+        subgraph ModuloReportes["Módulo 4: Reportes y Métricas"]
+            REP["Consolidación de Toneladas Recicladas"]:::module
+        end
+    end
+
+    %% Base de Datos
+    subgraph Almacenamiento["Capa de Datos"]
+        BD[("Base de Datos Relacional PostgreSQL")]:::db
+    end
+
+    %% Relaciones de Actores a Clientes
+    V -->|Solicita recojo / Consulta puntos| PWA
+    R -->|Consulta rutas / Registra pesaje| PWA
+    M -->|Configura distritos / Ve reportes| WEB
+
+    %% Relaciones de Clientes a Backend
+    PWA -->|HTTP / JSON REST API| Backend
+    WEB -->|HTTP / JSON REST API| Backend
+
+    %% Comunicación entre Módulos Internos (In-Process Calls)
+    SOL -->|Invocación directa| AUTH
+    SOL -->|Notifica entrega exitosa| PTS
+    REP -->|Consulta agregados| SOL
+    REP -->|Consulta agregados| PTS
+
+    %% Conexión a Base de Datos
+    AUTH -->|ORM / SQL| BD
+    SOL -->|ORM / SQL| BD
+    PTS -->|ORM / SQL| BD
+    REP -->|ORM / SQL| BD
