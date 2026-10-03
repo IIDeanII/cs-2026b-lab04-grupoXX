@@ -1,56 +1,41 @@
-# EcoRecicla AQP — Plataforma de Reciclaje Inclusivo (MVP)
+# EcoRecicla AQP – Laboratorio 04: Fundamentos de arquitectura de software
+Construcción de Software · EPIS-UNSA · 2026-B · Grupo XX
 
-> **Proyecto Universitario:** Arquitectura de Software  
-> **Caso de Estudio:** Sistema de recojo y gestión de reciclaje para la ciudad de Arequipa, Perú.  
-> **Modalidad:** MVP de 1 mes (Desarrollador Individual).
+## Integrantes
+| Nombre | Rol en el laboratorio |
+|---|---|
+| Pari Charrez Dean Diego | Arquitecto de software, redactor de ADRs, diagramador y verificador de IA |
 
----
+## Caso
+EcoRecicla AQP es una plataforma digital para la ciudad de Arequipa que optimiza la cadena de reciclaje conectando a vecinos, recicladores formalizados y la administración municipal. Permite solicitar recojos programados, registrar el pesaje, acumular puntos ecológicos y generar reportes consolidados por distrito. El atributo de calidad crítico es la **Modificabilidad (QA-01)**, requiriendo que la adición de un nuevo distrito o la modificación de reglas de canje no afecte a otros componentes y se realice en $\le 2$ días-persona.
 
-## 📌 Visión General del Proyecto
+## Arquitectura elegida
+```mermaid
+graph TD
+    V[Vecino] -->|Solicitud| PWA[PWA Frontend]
+    R[Reciclador] -->|Ruta/Pesaje| PWA
+    M[Municipalidad] -->|Reportes| WEB[Web Admin]
 
-**EcoRecicla AQP** es una solución digital diseñada para optimizar la cadena de recolección de residuos reciclables en Arequipa. Permite a los vecinos programar solicitudes de recojo, a los recicladores formalizados optimizar sus rutas y pesajes, y a la municipalidad acceder a reportes consolidados sobre toneladas recicladas.
+    PWA --> API[API Gateway / Monolito]
+    WEB --> API
 
----
+    subgraph Monolito Modular Backend
+        API --> M1[Módulo Usuarios]
+        API --> M2[Módulo Solicitudes y Rutas]
+        API --> M3[Módulo Puntos y Canjes]
+        API --> M4[Módulo Reportes]
+    end
 
-## 🏛️ Estilo Arquitectónico
+    M1 --> BD[(PostgreSQL)]
+    M2 --> BD
+    M3 --> BD
+    M4 --> BD
+```
 
-Se ha seleccionado una arquitectura de **Monolito Modular** desplegada en un unico servidor VPS de bajo costo.
+## Decisiones arquitectónicas
+- [ADR-001: Selección del estilo arquitectónico Monolito Modular](docs/architecture/adr/001-estilo-arquitectonico.md)
+- [ADR-002: Estrategia de privacidad de datos y cumplimiento de la Ley N° 29733](docs/architecture/adr/002-estrategia-privacidad-datos.md)
+- [ADR-003: Selección del motor de base de datos relacional (PostgreSQL)](docs/architecture/adr/003-seleccion-motor-bd.md)
 
-* **Drivers Clave:** Velocidad de desarrollo (1 desarrollador en 1 mes) y Modificabilidad (`QA-01`), permitiendo aislar la lógica de cada dominio.
-* **Módulos Backend:**
-  1. **Usuarios y Autenticación:** Registro, roles y privacidad de datos.
-  2. **Solicitudes y Rutas:** Programación e itinerario de recicladores.
-  3. **Puntos y Canjes:** Cálculo de beneficios y catálogo de premios.
-  4. **Reportes y Métricas:** Indicadores de impacto ambiental por distrito.
-
----
-
-## 📂 Estructura de Entregables de Arquitectura
-
-Toda la documentación arquitectónica se encuentra organizada dentro de la carpeta `docs/architecture/`:
-
-| Entregable | Ubicación / Archivo | Descripción |
-| :--- | :--- | :--- |
-| **E1: Drivers de Arquitectura** | [`docs/architecture/drivers.md`](docs/architecture/drivers.md) | Atributos de calidad (QA), restricciones (R) y decisiones de negocio (CON). |
-| **E2: Matriz de Decisión** | [`docs/architecture/matriz-decision.md`](docs/architecture/matriz-decision.md) | Evaluación comparativa de alternativas arquitectónicas. |
-| **E3: Diagrama de Arquitectura** | [`docs/architecture/diagramas/arquitectura.mmd`](docs/architecture/diagramas/arquitectura.mmd) | Diagrama del Monolito Modular en Mermaid (`.mmd`). |
-| **E4: Registros de Decisión (ADRs)** | [`docs/architecture/adr/`](docs/architecture/adr/) | ADR-001 (Monolito Modular), ADR-002 (Ley N° 29733) y ADR-003 (PostgreSQL). |
-| **E5: Alternativa Descartada** | [`docs/architecture/diagramas/alternativa.puml`](docs/architecture/diagramas/alternativa.puml) | Diagrama en PlantUML de la alternativa de Microservicios descartada. |
-| **E6: Vista de Despliegue** | [`docs/architecture/diagramas/despliegue.py`](docs/architecture/diagramas/despliegue.py) | Script de Python (Diagrams) para la infraestructura VPS. |
-| **E7: Bitácora de Inteligencia Artificial** | [`docs/architecture/bitacora-ia.md`](docs/architecture/bitacora-ia.md) | Registro de prompts, iteraciones y validación de diagramas con IA. |
-| **E8: README del Repositorio** | [`README.md`](README.md) | Guía principal del repositorio y navegación. |
-
----
-
-## 🖼️ Diagramas del Sistema
-
-Las imágenes exportadas de los diagramas se encuentran en la carpeta `docs/architecture/img/`:
-- **Diagrama de Arquitectura (Mermaid):** `docs/architecture/img/arquitectura.png`
-- **Alternativa Descartada (PlantUML):** `docs/architecture/img/alternativa.png`
-- **Diagrama de Despliegue (Python Diagrams):** `docs/architecture/img/despliegue.png`
-
----
-
-## ⚖️ Normativa y Privacidad de Datos
-
-El diseño del sistema cumple con la **Ley N° 29733 (Ley de Protección de Datos Personales en el Perú)** mediante cifrado TLS 1.3, visibilidad restringida de direcciones de vecinos solo durante rutas activas y mecanismos de consentimiento informado (ver [`ADR-002`](docs/architecture/adr/002-estrategia-privacidad-datos.md)).
+## Reflexión sobre el uso de la IA (5-8 líneas)
+La inteligencia artificial actuo como un copiloto eficaz para acelerar la estructuración de la documentación técnica y generar la sintaxis inicial de los diagramas (Mermaid, PlantUML y Python Diagrams). Sin embargo, presento limitaciones al cortar bloques de codigo extensos, omitir directivas de posicionamiento visual y sugerir sintaxis obsoleta que impedía el correcto renderizado. Aprendi que la IA no reemplaza el criterio del arquitecto: fue indispensable validar paso a paso la consistencia de cada entregable, verificar de forma independiente la sintaxis en renderizadores oficiales e iterar los prompts para adaptar las respuestas estrictamente a las restricciones del caso de estudio.
