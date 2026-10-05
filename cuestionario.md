@@ -1,4 +1,4 @@
-# 📄 Respuestas al Cuestionario – Caso: San Camilo en Línea
+# Respuestas al Cuestionario – Caso: San Camilo en Línea
 
 ---
 
@@ -34,7 +34,7 @@ Para el atributo de **Seguridad y Autorización por Rol (`QA-05`)** en San Camil
 
 5. **Respuesta:** El sistema valida la pertenencia del recurso (`puesto_id`), bloquea el acceso no autorizado con un código HTTP `403 Forbidden` y registra el intento no autorizado en la auditoría.
 
-6. **Medida de la respuesta:** $100%$ de los intentos no autorizados rechazados (0 datos de otros puestos modificados).
+6. **Medida de la respuesta:** 100% de los intentos no autorizados rechazados (0 datos de otros puestos modificados).
 
 ---
 
@@ -88,6 +88,6 @@ Al solicitar las alternativas de arquitectura backend mediante el Prompt 1, la I
 
 1. **Fuga de Información Confidencial (Data Leakage):** Enviar variables de entorno, esquemas de bases de datos con datos reales de comerciantes/clientes o claves privadas a modelos de IA públicos puede exponer datos protegidos a terceros o utilizarlos para reentrenar modelos SaaS.
 
-2. **Vulnerabilidades y "Alucinaciones" de Código/Configuración:** Copiar ciegamente reglas de seguridad o fragmentos de infraestructura sugeridos por IA puede introducir agujeros de seguridad (como endpoints desprotegidos o la exposición de credenciales) si no son revisados por un profesional humano.
+2. **Vulnerabilidades de Código/Configuración:** Copiar ciegamente reglas de seguridad o fragmentos de infraestructura sugeridos por IA puede introducir agujeros de seguridad (como endpoints desprotegidos o la exposición de credenciales) si no son revisados por un profesional humano.
 
 3. **Infracción de Licencias y Propiedad Intelectual:** La IA puede generar patrones o código copiados directamente de repositorios con licencias restrictivas sin la debida atribución.
